@@ -6,6 +6,7 @@ import './App.css'
 function App() {
   return(
     <div className="container">
+      <img rel="icon" type="image/png" src="/assets/dino.png" />
       <header>
         <h1>Parallel Sites</h1>
         <p>Seth likes Goth mommies</p>
