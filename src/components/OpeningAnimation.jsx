@@ -16,10 +16,12 @@ function OpeningAnimation({ onFinish }) {
   return (
     play && (
       <div className="animation-overlay">
+        <div className="scale-wrapper">
         <div className="monitor">
           <div className="line left-line" />
           <div className="line right-line" />
         </div>
+      </div>
       </div>
     )
   );
