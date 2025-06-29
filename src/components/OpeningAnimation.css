@@ -1,0 +1,70 @@
+.animation-overlay {
+  position: fixed;
+  inset: 0;
+  background: white;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeOut 2s ease 1s forwards;
+}
+
+.monitor {
+  position: relative;
+  width: 350px;
+  height: 250px;
+  background: #333;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: monitorFade 2s ease 1s forwards;
+}
+
+.line {
+  position: absolute;
+  width: 6px;
+  height: 100vh; /* Full screen height */
+  background: white;
+  top: 0;
+  transition: transform 2.5s ease;
+  
+}
+
+.left-line {
+  left: 42%;
+  animation: slideLeft 4s forwards;
+   animation-delay: .5s;
+}
+
+.right-line {
+  left: 58%;
+  animation: slideRight 4s forwards;
+  animation-delay: .5s;
+}
+
+@keyframes slideLeft {
+  to {
+    transform: translateX(-100vw);
+  }
+}
+
+@keyframes slideRight {
+  to {
+    transform: translateX(100vw);
+  }
+}
+
+@keyframes monitorFade {
+  to {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
