@@ -1,62 +1,69 @@
 .animation-overlay {
   position: fixed;
   inset: 0;
-  background: white;
+  background: #333;
   z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: fadeOut 2s ease 1s forwards;
+  animation: fadeOut 2s ease 5s forwards;
 }
 
 .monitor {
   position: relative;
   width: 350px;
   height: 250px;
-  background: #333;
+  background: #3BAD92;
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: monitorFade 2s ease 1s forwards;
+  animation: monitorFade 2s ease 4s forwards;
+  overflow: visible;
 }
 
 .line {
   position: absolute;
-  width: 6px;
-  height: 100vh; /* Full screen height */
+  width: 10px;
+  height: 40px;
   background: white;
-  top: 0;
-  transition: transform 2.5s ease;
-  
-}
-
-.left-line {
-  left: 42%;
-  animation: slideLeft 4s forwards;
-   animation-delay: .5s;
-}
-
-.right-line {
-  left: 58%;
-  animation: slideRight 4s forwards;
-  animation-delay: .5s;
-}
-.scale-wrapper {
-  animation: scaleUp 4s ease forwards;
+  top: 50%;
+  transform: translateY(-50%) scale(1);
+  border-radius: 2px;
   transform-origin: center;
 }
 
+.left-line {
+  left: 46%;
+  animation: scaleAndSlideLeft 2s ease forwards;
+  animation-delay: 0.5s;
+}
 
-@keyframes slideLeft {
-  to {
-    transform: translateX(-100vw);
+.right-line {
+  left: 54%;
+  animation: scaleAndSlideRight 2s ease forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes scaleAndSlideLeft {
+  0% {
+    height: 40px;
+    transform: translateY(-50%) scale(1) translateX(0);
+  }
+  100% {
+    height: 100vh;
+    transform: translateY(-50%) scale(1, 25) translateX(-100vw);
   }
 }
 
-@keyframes slideRight {
-  to {
-    transform: translateX(100vw);
+@keyframes scaleAndSlideRight {
+  0% {
+    height: 40px;
+    transform: translateY(-50%) scale(1) translateX(0);
+  }
+  100% {
+    height: 100vh;
+    transform: translateY(-50%) scale(1, 25) translateX(100vw);
   }
 }
 
@@ -71,13 +78,5 @@
   to {
     opacity: 0;
     pointer-events: none;
-  }
-}
-@keyframes scaleUp {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(12); /* Large enough to fill screen */
   }
 }

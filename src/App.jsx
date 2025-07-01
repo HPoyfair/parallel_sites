@@ -13,7 +13,7 @@ function App() {
         <div className="container">
           {/* Favicon is handled in index.html, not here */}
           <header>
-            <img src="/assets/dino.webp" alt="Parallel Sites Logo" style={{ height: '60px' }} />
+            <img src="/assets/dino.png" alt="Parallel Sites Logo" style={{ height: '60px' }} />
             <h1>Parallel Sites</h1>
             <p>Seth likes Goth mommies</p>
           </header>
