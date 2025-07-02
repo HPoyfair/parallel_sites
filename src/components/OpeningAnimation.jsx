@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import './OpeningAnimation.css';
+import '../css/OpeningAnimation.css';
 
 function OpeningAnimation({ onFinish }) {
   const [play, setPlay] = useState(true);

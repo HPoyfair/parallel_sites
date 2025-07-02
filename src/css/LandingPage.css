@@ -1,0 +1,79 @@
+/* Fullscreen centered layout */
+body, html {
+  height: 100%;
+
+  background-color: #1e1e1e; /* dark backdrop */
+}
+
+.LandingPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* full viewport height */
+  width: 100vh;
+  background-color: blue;
+}
+
+/* Page content */
+.LandingPage > div {
+  
+  
+  padding: 2rem;
+  background-color: red;
+  
+ 
+  text-align: center;
+}
+header {
+  margin-bottom: 2rem;
+}   
+
+
+
+.navbar a{
+    color:  white;
+}
+.navbar ul{
+    list-style:none;
+    display:flex;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+header img {
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  font-size: 1.1rem;
+  color: #444;
+}
+
+main section {
+  margin-top: 2rem;
+}
+
+main section img {
+  margin-bottom: 1rem;
+  max-width: 200px;
+}
+
+#start {
+ 
+  padding: 2rem;
+  
+  transition: transform 0.3s ease;
+}
+
+#start:hover {
+  transform: translateY(-4px);
+}

@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: fadeOut 2s ease 5s forwards;
+  animation: fadeOut 2s ease 2s forwards;
 }
 
 .monitor {
@@ -18,54 +18,52 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: monitorFade 2s ease 4s forwards;
+  animation: monitorFade 2s ease 1.25s forwards;
   overflow: visible;
 }
 
 .line {
   position: absolute;
   width: 10px;
-  height: 40px;
+  height: 250px;
   background: white;
   top: 50%;
-  transform: translateY(-50%) scale(1);
+  transform: translateY(-50%);
   border-radius: 2px;
-  transform-origin: center;
+  
 }
 
 .left-line {
   left: 46%;
-  animation: scaleAndSlideLeft 2s ease forwards;
+  animation: slideLeft .5s ease forwards;
   animation-delay: 0.5s;
 }
 
 .right-line {
   left: 54%;
-  animation: scaleAndSlideRight 2s ease forwards;
+  animation: slideRight .5s ease forwards;
   animation-delay: 0.5s;
 }
 
-@keyframes scaleAndSlideLeft {
+@keyframes slideLeft {
   0% {
-    height: 40px;
-    transform: translateY(-50%) scale(1) translateX(0);
+    transform: translateY(-50%) translateX(0);
   }
   100% {
-    height: 100vh;
-    transform: translateY(-50%) scale(1, 25) translateX(-100vw);
+    transform: translateY(-50%) translateX(-150px); /* half of 175px (half-monitor width) */
   }
 }
 
-@keyframes scaleAndSlideRight {
+@keyframes slideRight {
   0% {
-    height: 40px;
-    transform: translateY(-50%) scale(1) translateX(0);
+    transform: translateY(-50%) translateX(0);
   }
   100% {
-    height: 100vh;
-    transform: translateY(-50%) scale(1, 25) translateX(100vw);
+    transform: translateY(-50%) translateX(150px);
   }
 }
+
+
 
 @keyframes monitorFade {
   to {

@@ -1,34 +1,27 @@
-import { useState } from 'react';
-import './App.css';
+import { useState, useEffect } from 'react';
 import OpeningAnimation from './components/OpeningAnimation';
+import LandingPage from './components/LandingPage';
+import './App.css';
 
 function App() {
   const [isAnimationDone, setIsAnimationDone] = useState(false);
 
+  // You can persist animation state here if desired with localStorage
+  useEffect(() => {
+    // If we wanted to skip animation after first load:
+    // const hasSeenAnimation = localStorage.getItem('seenAnimation');
+    // if (hasSeenAnimation) setIsAnimationDone(true);
+  }, []);
+
   return (
     <>
-      {!isAnimationDone && <OpeningAnimation onFinish={() => setIsAnimationDone(true)} />}
-
-      {isAnimationDone && (
-        <div className="container">
-          {/* Favicon is handled in index.html, not here */}
-          <header>
-            <img src="/assets/dino.png" alt="Parallel Sites Logo" style={{ height: '60px' }} />
-            <h1>Parallel Sites</h1>
-            <p>Seth likes Goth mommies</p>
-          </header>
-
-          <main>
-            <section>
-              <h2>About</h2>
-              <p>Butts, nuts, and coconuts.</p>
-            </section>
-          </main>
-
-          <footer>
-            <p>Please give us money, thank you.</p>
-          </footer>
-        </div>
+      {!isAnimationDone ? (
+        <OpeningAnimation onFinish={() => {
+          setIsAnimationDone(true);
+          // Optional: localStorage.setItem('seenAnimation', 'true');
+        }} />
+      ) : (
+        <LandingPage />
       )}
     </>
   );
